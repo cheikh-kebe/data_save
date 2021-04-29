@@ -37,7 +37,7 @@ class Scrap
     end
   end
   def save_as_spreadsheet
-    session = GoogleDrive::Session.from_config("config.js")
+    session = GoogleDrive::Session.from_config("config.json")
     ws = session.spreadsheet_by_key("1xpnaB5qcjF18AbmcP94b2cRBggHqVHSwUhKmSzTpxos").worksheets[0]
     @new_array.size.times do |i|
       ws[ i+1 , 1 ] = @new_array[i].keys.join
